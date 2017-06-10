@@ -10,12 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610155144) do
+ActiveRecord::Schema.define(version: 20170610161621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "answer_cards", force: :cascade do |t|
+    t.text "phrase"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_cards", force: :cascade do |t|
+    t.bigint "sentence_card_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_cards_on_game_id"
+    t.index ["sentence_card_id"], name: "index_game_cards_on_sentence_card_id"
+  end
+
   create_table "games", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_cards", force: :cascade do |t|
+    t.bigint "answer_card_id"
+    t.bigint "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_card_id"], name: "index_player_cards_on_answer_card_id"
+    t.index ["player_id"], name: "index_player_cards_on_player_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_players_on_game_id"
+  end
+
+  create_table "sentence_cards", force: :cascade do |t|
+    t.text "phrase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,4 +75,9 @@ ActiveRecord::Schema.define(version: 20170610155144) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "game_cards", "games"
+  add_foreign_key "game_cards", "sentence_cards"
+  add_foreign_key "player_cards", "answer_cards"
+  add_foreign_key "player_cards", "players"
+  add_foreign_key "players", "games"
 end
