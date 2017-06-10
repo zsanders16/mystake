@@ -3,10 +3,16 @@ class GamesController < ApplicationController
   def index
   end
 
-  def new
-    @game = Game.new
+  def show
     
   end
+  
+
+  def create
+    @game = Game.crate
+
+  end
+  
   
 
   

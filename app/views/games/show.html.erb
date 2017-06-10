@@ -1,0 +1,19 @@
+<h1>Welcome to your new game</h1>
+
+<% if @game.players.empty? %>
+    <h3>There are no players for this game, you need to add one.</h3>
+<% else %>
+    <table class="table table-striped">
+        <tr>
+            <th>Player Name</th>
+        </tr>
+        <tr>
+            <td><%= @game.players.each do |player| %></td>
+        </tr>
+    </table>
+<% end %>
+
+
+
+
+    <>
