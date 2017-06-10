@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root 'games#index'
 
   devise_for :users
-  resources :games
-  resources :players
+  resources :games do
+    resources :players
+  end
+  
   resources :answer_cards
   resources :sentence_cards
   resources :game_cards

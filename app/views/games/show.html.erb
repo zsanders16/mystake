@@ -1,19 +1,34 @@
 <h1>Welcome to your new game</h1>
 
+<% binding.pry %>
 <% if @game.players.empty? %>
+    
     <h3>There are no players for this game, you need to add one.</h3>
 <% else %>
     <table class="table table-striped">
         <tr>
             <th>Player Name</th>
         </tr>
-        <tr>
-            <td><%= @game.players.each do |player| %></td>
-        </tr>
+        <%= @game.players.each do |player| %>
+            <tr>
+                <td><%= player.name %></td> 
+            </tr>
+         <% end %>
     </table>
 <% end %>
 
+<div class="btn btn-primary add-click">
+    <h3>Add New Player</h3>
+</div>
 
-
-
-    <>
+<div class="add-player panel panel-default hidden">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Player</h3>
+  </div>
+  <div class="panel-body">
+    <%= form_for [@game, @player] do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    <% end %>
+  </div>
+</div>
