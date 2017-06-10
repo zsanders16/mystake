@@ -1,9 +1,12 @@
 class GamesController < ApplicationController
-  def Index
+  def index
   end
 
-  def New
+  def new
+    @game = Game.new
+    @number_players([:number_players])
   end
+  
 
   
 end
