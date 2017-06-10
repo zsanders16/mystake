@@ -1,8 +1,7 @@
 <h1>Welcome to your new game</h1>
 
-<% binding.pry %>
 <% if @game.players.empty? %>
-    
+
     <h3>There are no players for this game, you need to add one.</h3>
 <% else %>
     <table class="table table-striped">
@@ -11,7 +10,7 @@
         </tr>
         <%= @game.players.each do |player| %>
             <tr>
-                <td><%= player.name %></td> 
+                <td><%= player.name %></td>
             </tr>
          <% end %>
     </table>
