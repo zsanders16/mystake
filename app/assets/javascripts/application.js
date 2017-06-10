@@ -16,8 +16,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$( document).ready(function() {
-    
+$(document).ready(function() {
+
     $('.add-click').click(function(){
         $('.add-click').toggleClass('hidden');
         $(".add-player").toggleClass("hidden");
