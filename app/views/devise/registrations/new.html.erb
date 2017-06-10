@@ -1,3 +1,12 @@
+<style>
+body {
+  background-color: black;
+}
+</style>
+<div class='Sign_up_info'>
+<div id="wrapper" style="text-align: center">
+    <div id="yourdiv" style="display: inline-block;">You text</div>
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -21,9 +30,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div
+    <%= f.submit "log in", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
