@@ -5,6 +5,7 @@ class GamesController < ApplicationController
     5.times do
       @game.game_cards.create(sentence_card_id: SentenceCard.all.sample.id)
     end
+    render :index
   end
 
   def show
