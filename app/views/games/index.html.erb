@@ -3,11 +3,12 @@
       background: url('http://wallpapercave.com/wp/CBlPtWd.jpg');
       background-repeat: no-repeat;
       background-size: cover;
+      background-color: black;
   }
 </style>
 
 
 
-<div> </div>
-<%= link_to 'Start New Game', game_path(@game.id) %>
-
+<div class='btn btn-inverse new-game animated infinite pulse'>
+<%= link_to 'Start New Game', game_path(@game.id), class: 'text-danger' %>
+</div>

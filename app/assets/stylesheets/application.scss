@@ -89,6 +89,7 @@
   transform-origin: center bottom;
 }
 
+
 @keyframes flash {
   from, 50%, to {
     opacity: 1;
@@ -122,6 +123,18 @@
 .pulse {
   animation-name: pulse;
 }
+.new-game {
+  margin-left: 650px;
+  margin-top: 600px;
+  font-size: 30px;
+  background-color: black;
+
+}
+.navbar-brand {
+  margin-left: 400px;
+}
+
+
 
 @keyframes rubberBand {
   from {
