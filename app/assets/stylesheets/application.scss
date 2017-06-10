@@ -10,7 +10,7 @@
  */
 
  .add-player {
-    width: 400px;
+    width: 500px;
 }
 
 .animated {
@@ -59,7 +59,7 @@
   margin-top: 20px;
   color: darkblue;
   width: 400px;
-  margin-left: 400px;
+  margin-left: 450px;
   border-radius: 10px;
 }
 .Sign_up_info {
@@ -67,10 +67,20 @@
   margin-top: 20px;
   color: darkblue;
   width: 400px;
-  margin-left: 400px;
+  margin-left: 450px;
   border-radius: 10px;
+}
 
+.team {
+  width: 500px;
+  margin-top: 50px;
+  border-radius: 10px;
+  margin-left: 350px;
 
+}
+
+.add-click {
+  margin-top: 15px;
 }
 .bounce {
   animation-name: bounce;
