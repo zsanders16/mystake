@@ -9,7 +9,6 @@ class PlayersController < ApplicationController
         5.times do
             @player.player_cards.new(answer_card_id: AnswerCard.all.sample.id)
         end
-        binding.pry
         
         redirect_to game_path(params[:game_id])
 
