@@ -15,7 +15,6 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create 
-
   end
   
 end
