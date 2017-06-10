@@ -7,7 +7,7 @@ class PlayersController < ApplicationController
         @player.save
 
         5.times do
-            @player.player_cards.new(answer_card_id: AnswerCard.all.sample.id)
+            @player.player_cards.create(answer_card_id: AnswerCard.all.sample.id)
         end
         
         redirect_to game_path(params[:game_id])
