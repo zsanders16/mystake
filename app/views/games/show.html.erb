@@ -13,21 +13,26 @@
     <% if @game.players.empty? %>
         <h3 class="text-danger">There are no players for this game, you need to add one.</h3>
     <% else %>
-        <table class="table table-striped">
-            <tr>
+        <table class="table">
+            <tr class="active">
                 <th>Player Name</th>
             </tr>
             <% @game.players.each do |player| %>
-                <tr>
+                <tr class="active">
                     <td><%= player.name %></td>
                 </tr>
             <% end %>
         </table>
-    <% end %>
 
+        <div class="btn btn-primary add-play">
+            <h3>Lets Play</h3>
+        </div>
+    <% end %>
+    <hr>
     <div class="btn btn-primary add-click">
         <h3>Add New Player</h3>
     </div>
+   
 
     <div class="add-player panel panel-default hidden">
     <div class="panel-heading">
